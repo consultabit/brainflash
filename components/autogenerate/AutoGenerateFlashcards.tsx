@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import autoGenerateFlashcardsFetch from "/home/grant/pycharm/brainflash/lib/autoGenerateFlashcardsFetch";
+import autoGenerateFlashcardsCallAPI from "/home/grant/pycharm/brainflash/lib/autoGenerateFlashcardsCallAPI";
 const AutoGenerateFlashcards = () => {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,7 @@ const AutoGenerateFlashcards = () => {
     setIsLoading(true);
 
     // Replace this with your own API call to generate flashcards
-    await autoGenerateFlashcardsFetch(inputText);
+    await autoGenerateFlashcardsCallAPI(inputText);
 
     setIsLoading(false);
   };

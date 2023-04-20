@@ -1,4 +1,7 @@
-export default async function handler(req, res) {
+import {NextApiRequest,NextApiResponse} from "next";
+import generateFlashcardsChatCompletion from "../../lib/openai/generateFlashcardsChatCompletion";
+
+export default async function handler(req:NextApiRequest, res:NextApiResponse) {
   // Check if the request method if post
   if (req.method !== 'POST') {
     res.status(405).json({ message: "Method Not Allowed"});
@@ -19,7 +22,7 @@ export default async function handler(req, res) {
 
   try {
     // Call your function to generate flashcards using the input text
-    const generatedFlashcards = await yourGenerateFlashcardsFunction(inputText);
+    const generatedFlashcards = await generateFlashcardsChatCompletion(inputText);
 
     // Send the gneerated flashcards as the response
     res.status(200).json(generatedFlashcards);
@@ -31,7 +34,7 @@ export default async function handler(req, res) {
 }
 
 
-async function yourGenerateFlashcardsFunction(){
+async function yourGenerateFlashcardsFunction(text){
   console.log("activated");
   return "GENERATED FLASHCARDS";
 }

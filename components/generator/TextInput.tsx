@@ -9,7 +9,7 @@ const TextInput = ({ label, value, onChange }) => {
          id={label}
          value={value}
          onChange={onChange}
-         rows="10"
+         rows ={10}
        >
 
     </textarea>
