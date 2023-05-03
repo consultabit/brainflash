@@ -12,26 +12,22 @@ export default async function generateFlashcardsChatCompletion(userInput){
             content: userInput,
         },
     ];
-    
+
+    console.log(messages);
+
     let response = await openai.createChatCompletion(
         {
             "model": model,
             "messages": messages,
-            "temperature": 0,
+            "temperature": .2,
         }
     )
 
     let assistantResponse = response.data.choices[0].message
     console.log(assistantResponse);
 
-
-
-
-
-
-
     let responseObject = {
-      "assistantResponse":assistantResponse,
+      "flashcards":assistantResponse,
     }
 
     return responseObject;

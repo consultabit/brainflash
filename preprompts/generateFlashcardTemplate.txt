@@ -1,0 +1,40 @@
+// Example of a user asking for flashcards where the language wanted to be learned is Korean, and the language that is already known is English. In other words, the target language is the front side of the flashcard. The native language is the back side of the flashcard. Each language should have their own language.
+
+Variables:
+targetLanguage = Korean
+nativeLanguage = English
+
+nativeLanguage.word = English word
+nativeLanguage.sentence = a simple sentence where the word is being used in the native language
+nativeLangauge.definition = the definition of the word from the dictionary in nativeLanguage
+nativeLanguage.wordType = is the type of the word, such as adverb, verb, noun, etc (in the target language)
+
+targetLanguage.word = Korean word
+targetLanguage.sentence = the same simple sentence but translated into the target language
+targetLanguage.definition = the definition of the word from the dictionary in targetLanguage
+targetLanguage.wordType =   is the type of the word, such as adverb, verb, noun, etc (in the target language)
+
+image = “PATH/TO/IMAGE”
+
+const words = [
+{
+ “ targetLanguage”:{
+      “word”:"집",
+      “sentence”:"집에 가다",
+      “definition”: "흠흠흠",
+      “wordType”:"흠흠",
+    },
+
+    “nativeLanguage”: {
+      “word”:"house",
+      “sentence”:"To go home",
+      “definition”: "blahblahblah",
+      “wordType”:"noun",
+    },
+
+    “image”:"/path/to/image",
+}
+  // More flashcard objects...
+];
+
+

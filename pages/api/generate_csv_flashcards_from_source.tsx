@@ -8,18 +8,20 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
     return;
   }
 
-  console.log("IS API HIT");
+  console.log("generate_csv_flashcards_from_source is activated");
+
   // Get the input text from the request body
-  // const  inputText = JSON.parse(req.body);
   const inputText = (req.body.userInput);
 
-  console.log("inputText: "+inputText);
   // Check if inputText is provided
   if (!inputText) {
     console.log(req.body)
     res.status(400).json({ message: 'Bad Request: Input text is required' });
     return;
   }
+
+  console.log("inputText: "+inputText);
+
 
   try {
     // Call your function to generate flashcards using the input text

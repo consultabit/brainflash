@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import autoGenerateFlashcardsCallAPI from "/home/grant/pycharm/brainflash/lib/autoGenerateFlashcardsCallAPI";
-const AutoGenerateFlashcards = () => {
+import React, {useContext, useEffect, useState} from 'react';
+// This one works
+import getTemplate from '../../preprompts/preprompt.js';
+// This prompt is in testing
+import aiMessageResponseAndFlashcardsGeneration from "../../preprompts/aiMessageResponseAndFlashcardsGeneration";
+import languageSelectorContext from "../../context/LanguageSelectorContext";
+
+
+const GenerateFlashcardsForLearningLanguageFromInput = (props) => {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  let extractContent = useContext(languageSelectorContext);
 
   const handleInputChange = (event) => {
     setInputText(event.target.value);
@@ -11,8 +19,18 @@ const AutoGenerateFlashcards = () => {
   const handleGenerateClick = async () => {
     setIsLoading(true);
 
+    // Get the template
+    let userObj = {
+      "targetLanguage": extractContent.targetLanguage.label,
+      "nativeLanguage": extractContent.nativeLanguage.label,
+    }
+
+    let newObj = (userObj);
+    let template = aiMessageResponseAndFlashcardsGeneration(newObj, inputText);
+
     // Replace this with your own API call to generate flashcards
-    await autoGenerateFlashcardsCallAPI(inputText);
+    console.log("input text:"+template);
+    props.onGenerate(template);
 
     setIsLoading(false);
   };
@@ -45,4 +63,4 @@ const AutoGenerateFlashcards = () => {
   );
 };
 
-export default AutoGenerateFlashcards;
+export default GenerateFlashcardsForLearningLanguageFromInput;

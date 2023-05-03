@@ -36,10 +36,10 @@ const Navigation = () => {
                     Home
                 </Link>
                 <Link href="/flashcards" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Flashcards
+                    FlashFormer
                 </Link>
                 <Link href="/generator" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Flashcard Generator
+                    FlashFormer
                 </Link>
               </div>
             </div>
@@ -57,7 +57,7 @@ const Navigation = () => {
               Flashcards
           </Link>
           <Link href="/generator" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Flashcard Generator
+              FlashFormer
           </Link>
         </div>
       </div>

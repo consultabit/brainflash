@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-indigo-600 text-white py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-semibold">
-          Flashcard Generator
+          FlashFormer
         </Link>
         <nav>
           <ul className="flex space-x-4">
